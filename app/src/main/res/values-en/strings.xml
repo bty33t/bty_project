@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Main activity-->
+    <string name="fab_add_title">Add</string>
+
+</resources>

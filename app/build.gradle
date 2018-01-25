@@ -1,11 +1,15 @@
 apply plugin: 'com.android.application'
 
+def AndroidVersion = '27.0.2'
+def AAVersion = '4.3.1'
+def MoxyVersion = '1.4.5'
+
 android {
-    compileSdkVersion 26
+    compileSdkVersion 27
     defaultConfig {
         applicationId "com.bty.betterthanyesterday"
         minSdkVersion 16
-        targetSdkVersion 26
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -20,9 +24,27 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:appcompat-v7:27.0.2'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    //support
+    compile "com.android.support:cardview-v7:$AndroidVersion"
+    compile "com.android.support:appcompat-v7:$AndroidVersion"
+    compile "com.android.support:support-v4:$AndroidVersion"
+    compile "com.android.support:design:$AndroidVersion"
+
+    //fab
+    compile 'com.github.clans:fab:1.6.4'
+
+    //android annotations
+    compile "org.androidannotations:androidannotations-api:$AAVersion"
+    annotationProcessor  "org.androidannotations:androidannotations:$AAVersion"
+
+    //moxy
+    compile "com.arello-mobile:moxy:$MoxyVersion"
+    annotationProcessor "com.arello-mobile:moxy-compiler:$MoxyVersion"
+    compile "com.arello-mobile:moxy-app-compat:$MoxyVersion"
 }
